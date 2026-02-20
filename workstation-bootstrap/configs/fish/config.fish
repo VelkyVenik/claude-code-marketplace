@@ -12,15 +12,18 @@ if test (uname) = "Darwin"
     fish_add_path /opt/homebrew/sbin
 end
 fish_add_path $HOME/.local/bin
-
-# Initialize zoxide (smart cd)
-if command -q zoxide
-    zoxide init fish | source
-end
+fish_add_path $HOME/.bun/bin
+fish_add_path $HOME/.local/share/fnm
+fish_add_path $HOME/.cargo/bin
 
 # Initialize fnm (if installed)
 if command -q fnm
     fnm env --shell fish | source
+end
+
+# Initialize zoxide (smart cd)
+if command -q zoxide
+    zoxide init fish | source
 end
 
 # --- Abbreviations ---
