@@ -78,7 +78,18 @@ brew install python
 sudo apt install -y python3 python3-pip python3-venv
 ```
 
-### 8.5 Docker (Ubuntu only)
+### 8.5 uv (Python package manager)
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+Verify:
+```bash
+uv --version
+```
+
+### 8.6 Docker (Ubuntu only)
 
 On Ubuntu, install Docker Engine:
 
@@ -117,5 +128,6 @@ npm --version
 bun --version
 pnpm --version
 python3 --version
+uv --version
 docker --version 2>/dev/null || echo "Docker not installed"
 ```
