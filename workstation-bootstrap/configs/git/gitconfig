@@ -1,0 +1,34 @@
+# Git Configuration
+# Deployed by workstation-bootstrap plugin
+# Placeholders __NAME__ and __EMAIL__ are replaced during setup
+
+[user]
+    name = __NAME__
+    email = __EMAIL__
+
+[init]
+    defaultBranch = main
+
+[push]
+    autoSetupRemote = true
+
+[pull]
+    rebase = true
+
+[credential]
+    # macOS: osxkeychain
+    # Ubuntu: cache
+    helper = osxkeychain
+
+[core]
+    editor = vim
+    autocrlf = input
+
+[diff]
+    colorMoved = default
+
+[merge]
+    conflictstyle = diff3
+
+[rerere]
+    enabled = true

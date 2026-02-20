@@ -1,0 +1,15 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "workstation-bootstrap",
+  "description": "Complete developer workstation provisioning — security hardening, shell, editor, CLI tools, and Claude Code setup. Supports macOS and Ubuntu.",
+  "version": "1.0.0",
+  "commands": [
+    { "name": "setup", "description": "Run full workstation bootstrap (interactive, phased)" }
+  ],
+  "agents": [
+    { "name": "bootstrap", "description": "Workstation provisioning agent — detects OS, runs phases, configures everything" }
+  ],
+  "skills": [
+    { "name": "workstation-setup", "path": "skills/workstation-setup/SKILL.md" }
+  ]
+}

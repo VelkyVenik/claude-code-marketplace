@@ -1,0 +1,31 @@
+# Ghostty Terminal Configuration
+# Deployed by workstation-bootstrap plugin
+
+# Font
+font-family = Monaco
+font-size = 15
+
+# Theme
+theme = Belafonte Night
+
+# Shell integration
+shell-integration = fish
+shell-integration-features = cursor,sudo,title,ssh-terminfo,ssh-env
+
+# macOS specific
+macos-option-as-alt = true
+macos-titlebar-style = tabs
+macos-icon = xray
+
+# Clipboard
+copy-on-select = clipboard
+
+# Scrollback
+scrollback-limit = 10000
+
+# Notifications
+desktop-notifications = true
+bell-features = title,attention
+
+# Quick terminal keybind
+keybind = global:cmd+§=toggle_quick_terminal

@@ -1,0 +1,63 @@
+" Vim Configuration
+" Deployed by workstation-bootstrap plugin
+
+" --- vim-plug ---
+call plug#begin('~/.vim/plugged')
+
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+call plug#end()
+
+" --- General Settings ---
+syntax on
+set number
+set relativenumber
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+
+" Tabs and indentation
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set autoindent
+set smartindent
+
+" System clipboard
+set clipboard=unnamed,unnamedplus
+
+" UI
+set cursorline
+set showcmd
+set wildmenu
+set lazyredraw
+set showmatch
+
+" No swap files
+set noswapfile
+set nobackup
+set nowritebackup
+
+" Split behavior
+set splitbelow
+set splitright
+
+" Scroll offset
+set scrolloff=8
+
+" --- Key Mappings ---
+
+" Clear search highlight
+nnoremap <Esc> :nohlsearch<CR>
+
+" FZF mappings
+nnoremap <C-p> :Files<CR>
+nnoremap <C-f> :Rg<CR>
+nnoremap <C-b> :Buffers<CR>
