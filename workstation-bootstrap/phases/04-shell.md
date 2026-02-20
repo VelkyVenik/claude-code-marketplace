@@ -60,13 +60,111 @@ Before copying, check if a config already exists and ask the user before overwri
 
 ### 4.6 Configure Tide Prompt
 
-Run Tide's interactive configuration:
+Apply Tide configuration (Lean style, one line, transient prompt, no frame):
 
 ```bash
-fish -c "tide configure"
-```
+# Prompt layout
+fish -c "set -U tide_left_prompt_items pwd git character"
+fish -c "set -U tide_right_prompt_items status cmd_duration context jobs direnv bun node python rustc go java php ruby zig"
 
-This is interactive — the user will choose their preferred prompt style.
+# Lean style — no background colors, space separators
+fish -c "set -U tide_left_prompt_frame_enabled false"
+fish -c "set -U tide_right_prompt_frame_enabled false"
+fish -c "set -U tide_left_prompt_prefix ''"
+fish -c "set -U tide_left_prompt_suffix ''"
+fish -c "set -U tide_right_prompt_prefix ' '"
+fish -c "set -U tide_right_prompt_suffix ''"
+fish -c "set -U tide_left_prompt_separator_diff_color ' '"
+fish -c "set -U tide_left_prompt_separator_same_color ' '"
+fish -c "set -U tide_right_prompt_separator_diff_color ' '"
+fish -c "set -U tide_right_prompt_separator_same_color ' '"
+fish -c "set -U tide_prompt_icon_connection ' '"
+fish -c "set -U tide_prompt_color_frame_and_connection brblack"
+fish -c "set -U tide_prompt_color_separator_same_color brblack"
+
+# One line, no newline before prompt
+fish -c "set -U tide_prompt_add_newline_before false"
+fish -c "set -U tide_prompt_min_cols 34"
+fish -c "set -U tide_prompt_pad_items false"
+
+# Transient prompt
+fish -c "set -U tide_prompt_transient_enabled true"
+
+# Character (prompt symbol)
+fish -c "set -U tide_character_icon ❯"
+fish -c "set -U tide_character_color brgreen"
+fish -c "set -U tide_character_color_failure brred"
+fish -c "set -U tide_character_vi_icon_default ❮"
+fish -c "set -U tide_character_vi_icon_replace ▶"
+fish -c "set -U tide_character_vi_icon_visual V"
+
+# PWD colors
+fish -c "set -U tide_pwd_bg_color normal"
+fish -c "set -U tide_pwd_color_anchors brcyan"
+fish -c "set -U tide_pwd_color_dirs cyan"
+fish -c "set -U tide_pwd_color_truncated_dirs magenta"
+fish -c "set -U tide_pwd_icon ''"
+fish -c "set -U tide_pwd_icon_home ''"
+fish -c "set -U tide_pwd_icon_unwritable "
+
+# Git colors
+fish -c "set -U tide_git_bg_color normal"
+fish -c "set -U tide_git_bg_color_unstable normal"
+fish -c "set -U tide_git_bg_color_urgent normal"
+fish -c "set -U tide_git_color_branch brgreen"
+fish -c "set -U tide_git_color_conflicted brred"
+fish -c "set -U tide_git_color_dirty bryellow"
+fish -c "set -U tide_git_color_operation brred"
+fish -c "set -U tide_git_color_staged bryellow"
+fish -c "set -U tide_git_color_stash brgreen"
+fish -c "set -U tide_git_color_untracked brblue"
+fish -c "set -U tide_git_color_upstream brgreen"
+fish -c "set -U tide_git_icon ''"
+fish -c "set -U tide_git_truncation_length 24"
+
+# Status icons
+fish -c "set -U tide_status_bg_color normal"
+fish -c "set -U tide_status_bg_color_failure normal"
+fish -c "set -U tide_status_color green"
+fish -c "set -U tide_status_color_failure red"
+fish -c "set -U tide_status_icon ✔"
+fish -c "set -U tide_status_icon_failure ✘"
+
+# Cmd duration
+fish -c "set -U tide_cmd_duration_bg_color normal"
+fish -c "set -U tide_cmd_duration_color brblack"
+fish -c "set -U tide_cmd_duration_decimals 0"
+fish -c "set -U tide_cmd_duration_icon ''"
+fish -c "set -U tide_cmd_duration_threshold 3000"
+
+# Context
+fish -c "set -U tide_context_always_display false"
+fish -c "set -U tide_context_bg_color normal"
+fish -c "set -U tide_context_color_default yellow"
+fish -c "set -U tide_context_color_root bryellow"
+fish -c "set -U tide_context_color_ssh yellow"
+fish -c "set -U tide_context_hostname_parts 1"
+
+# Jobs
+fish -c "set -U tide_jobs_bg_color normal"
+fish -c "set -U tide_jobs_color green"
+fish -c "set -U tide_jobs_icon "
+fish -c "set -U tide_jobs_number_threshold 1000"
+
+# Language/runtime item colors (all lean/normal bg)
+fish -c "set -U tide_node_bg_color normal"
+fish -c "set -U tide_node_color green"
+fish -c "set -U tide_node_icon "
+fish -c "set -U tide_python_bg_color normal"
+fish -c "set -U tide_python_color cyan"
+fish -c "set -U tide_python_icon 󰌠"
+fish -c "set -U tide_bun_bg_color normal"
+fish -c "set -U tide_bun_color white"
+fish -c "set -U tide_bun_icon 󰳓"
+fish -c "set -U tide_docker_bg_color normal"
+fish -c "set -U tide_docker_color blue"
+fish -c "set -U tide_docker_icon "
+```
 
 ### 4.7 Ubuntu-Specific Setup
 
