@@ -55,15 +55,6 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y build-essential curl wget git software-properties-common
 ```
 
-### 2.3 Install Cargo (for tools not available via apt)
-
-Some CLI tools in Phase 5 require Cargo (Rust package manager):
-
-```bash
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-source "$HOME/.cargo/env"
-```
-
 ## Verification
 
 ```bash
@@ -73,5 +64,4 @@ brew --version
 # Ubuntu
 apt --version
 gcc --version
-cargo --version
 ```

@@ -30,25 +30,16 @@ Each tool should be checked before installing:
 command -v <tool> >/dev/null 2>&1 && echo "<tool> already installed" || brew install <package>
 ```
 
-## Ubuntu (apt + cargo)
+## Ubuntu (apt)
 
-### Available via apt:
 ```bash
-sudo apt install -y bat ripgrep fzf jq btop duf fd-find
+sudo apt install -y bat ripgrep fzf jq btop duf fd-find eza zoxide du-dust httpie tldr
 ```
 
-### Install via cargo:
+If any package is not available in your Ubuntu version, install via pip or npm as fallback:
 ```bash
-cargo install eza zoxide du-dust
-```
-
-### Install via other means:
-```bash
-# tldr (npm or pip)
+# tldr fallback
 pip3 install tldr || npm install -g tldr
-
-# httpie
-sudo apt install -y httpie
 ```
 
 ### Ubuntu symlinks
