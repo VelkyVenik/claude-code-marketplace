@@ -145,8 +145,8 @@ sudo systemctl start fail2ban
 sudo sed -i 's/^#*PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config
 sudo sed -i 's/^#*PasswordAuthentication.*/PasswordAuthentication yes/' /etc/ssh/sshd_config
 
-# Restart SSH
-sudo systemctl restart sshd
+# Restart SSH (modern Ubuntu uses ssh.service, older uses sshd.service)
+sudo systemctl restart ssh || sudo systemctl restart sshd
 ```
 
 ### 1.5 Unattended Upgrades
