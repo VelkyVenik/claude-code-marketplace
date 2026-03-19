@@ -39,8 +39,13 @@ fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/fun
 
 ### 4.4 Install Fish Plugins
 
+**Required:**
 ```bash
 fish -c "fisher install IlanCosman/tide@v6"
+```
+
+**Optional but recommended:**
+```bash
 fish -c "fisher install PatrickF1/fzf.fish"
 fish -c "fisher install jorgebucaran/autopair.fish"
 fish -c "fisher install gazorby/fish-abbreviation-tips"
@@ -188,6 +193,21 @@ On macOS, the Fish config includes PATH additions for:
 - `$HOME/.local/bin`
 
 These are handled by the deployed `config.fish`.
+
+### 4.9 Fish 4.x Tide Compatibility
+
+Fish 4.x introduced breaking changes to the `pwd` builtin that cause errors in Tide's `_tide_pwd` function. The deployed `config.fish` includes a compatibility fix that wraps `_tide_pwd` to suppress these errors:
+
+```fish
+if functions -q _tide_pwd
+    functions -c _tide_pwd _tide_pwd_original
+    function _tide_pwd
+        _tide_pwd_original 2>/dev/null
+    end
+end
+```
+
+This fix is safe to keep even after Tide releases a native Fish 4.x update — it's a no-op if `_tide_pwd` doesn't exist.
 
 ## Verification
 

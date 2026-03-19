@@ -16,7 +16,6 @@ call plug#end()
 " --- General Settings ---
 syntax on
 set number
-set relativenumber
 set ignorecase
 set smartcase
 set incsearch

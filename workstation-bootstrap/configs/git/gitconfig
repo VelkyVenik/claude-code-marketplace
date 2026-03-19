@@ -1,10 +1,20 @@
 # Git Configuration
 # Deployed by workstation-bootstrap plugin
-# Placeholders __NAME__ and __EMAIL__ are replaced during setup
+# Placeholders __NAME__, __EMAIL__, and __SIGNING_KEY_PATH__ are replaced during setup
 
 [user]
     name = __NAME__
     email = __EMAIL__
+    signingkey = __SIGNING_KEY_PATH__
+
+[gpg]
+    format = ssh
+
+[gpg "ssh"]
+    program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+
+[commit]
+    gpgsign = true
 
 [init]
     defaultBranch = main
@@ -14,11 +24,6 @@
 
 [pull]
     rebase = true
-
-[credential]
-    # macOS: osxkeychain
-    # Ubuntu: cache
-    helper = osxkeychain
 
 [core]
     editor = vim

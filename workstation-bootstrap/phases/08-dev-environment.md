@@ -8,8 +8,16 @@ Install core development runtimes. This phase is intentionally minimal — proje
 
 Ask the user their preference:
 > How would you like to manage Node.js versions?
-> 1. **fnm** (Fast Node Manager — recommended, written in Rust)
-> 2. **nvm** (Node Version Manager — traditional choice)
+> 1. **Homebrew** (simplest — single global version, recommended for macOS)
+> 2. **fnm** (Fast Node Manager — multiple versions, written in Rust)
+> 3. **nvm** (Node Version Manager — traditional choice)
+
+**Homebrew (macOS only):**
+```bash
+brew install node
+```
+
+This installs the latest Node.js and npm globally. Simplest option if you only need one version at a time — Homebrew handles updates via `brew upgrade node`.
 
 **fnm:**
 ```bash

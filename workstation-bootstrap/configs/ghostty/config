@@ -2,8 +2,12 @@
 # Deployed by workstation-bootstrap plugin
 
 # Font
-font-family = Monaco
+font-family = JetBrainsMono Nerd Font
 font-size = 15
+
+# Font ligatures
+font-feature = calt
+font-feature = liga
 
 # Theme
 theme = Belafonte Night
@@ -27,5 +31,18 @@ scrollback-limit = 10000
 desktop-notifications = true
 bell-features = title,attention
 
-# Quick terminal keybind
+# Window
+window-width = 120
+window-height = 30
+window-padding-balance = true
+
+# Cursor
+cursor-style-blink = false
+
+# Splits
+unfocused-split-opacity = 0.55
+
+# Quick terminal
 keybind = global:cmd+§=toggle_quick_terminal
+quick-terminal-position = bottom
+quick-terminal-animation-duration = 0.15

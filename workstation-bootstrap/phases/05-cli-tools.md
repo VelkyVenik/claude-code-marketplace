@@ -2,38 +2,54 @@
 
 Install modern replacements for traditional Unix tools.
 
-## Tool List
+## Core Tools
+
+These are used daily and referenced in shell abbreviations.
 
 | Tool | Replaces | Purpose |
 |------|----------|---------|
 | bat | cat | Syntax-highlighted file viewer |
 | eza | ls | Modern file listing with icons and git status |
 | ripgrep (rg) | grep | Fast recursive search |
-| fd | find | Simple, fast file finder |
 | fzf | — | Fuzzy finder |
 | zoxide | cd | Smart directory jumper |
-| tldr | man | Simplified man pages |
 | jq | — | JSON processor |
 | btop | top/htop | System resource monitor |
 | dust | du | Disk usage analyzer |
+
+### macOS (Homebrew)
+
+```bash
+brew install bat eza ripgrep fzf zoxide jq btop dust
+```
+
+### Ubuntu (apt)
+
+```bash
+sudo apt install -y bat ripgrep fzf jq btop eza zoxide du-dust
+```
+
+## Optional Tools
+
+Nice to have but not essential for the base setup.
+
+| Tool | Replaces | Purpose |
+|------|----------|---------|
+| fd | find | Simple, fast file finder |
+| tldr | man | Simplified man pages |
 | duf | df | Disk usage/free utility |
 | httpie | curl | User-friendly HTTP client |
 
-## macOS (Homebrew)
+### macOS (Homebrew)
 
 ```bash
-brew install bat eza ripgrep fd fzf zoxide tldr jq btop dust duf httpie
+brew install fd tldr duf httpie
 ```
 
-Each tool should be checked before installing:
-```bash
-command -v <tool> >/dev/null 2>&1 && echo "<tool> already installed" || brew install <package>
-```
-
-## Ubuntu (apt)
+### Ubuntu (apt)
 
 ```bash
-sudo apt install -y bat ripgrep fzf jq btop duf fd-find eza zoxide du-dust httpie tldr
+sudo apt install -y fd-find duf httpie tldr
 ```
 
 If any package is not available in your Ubuntu version, install via pip or npm as fallback:
@@ -42,7 +58,7 @@ If any package is not available in your Ubuntu version, install via pip or npm a
 pip3 install tldr || npm install -g tldr
 ```
 
-### Ubuntu symlinks
+## Ubuntu symlinks
 
 These are created in Phase 4, but verify they exist:
 ```bash
@@ -55,18 +71,22 @@ ls -la ~/.local/bin/fd
 
 ## Verification
 
-Check each tool is accessible:
+Check core tools are accessible:
 ```bash
 bat --version
 eza --version
 rg --version
-fd --version
 fzf --version
 zoxide --version
-tldr --version
 jq --version
 btop --version
 dust --version
+```
+
+Check optional tools (if installed):
+```bash
+fd --version
+tldr --version
 duf --version
 http --version
 ```
